@@ -45,14 +45,7 @@ class BitmapAdapterPlugin: FlutterPlugin, MethodCallHandler {
     val nv21 = (image as Yuv2Nv21Adapter).toNv21()
     val bitmap = Toolkit.yuvToRgbBitmap(nv21!!, image.width, image.height, YuvFormat.NV21)
     val pixels = IntArray(image.width * image.height)
-    bitmap.getPixels(
-      pixels,
-      0,
-      bitmap,
-      0, 0,
-      image.width,
-      image.height
-    )
+    return intArrayOf()
   }
 
   override fun onDetachedFromEngine(binding: FlutterPlugin.FlutterPluginBinding) {

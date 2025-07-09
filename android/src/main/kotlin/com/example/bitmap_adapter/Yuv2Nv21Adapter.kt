@@ -31,7 +31,7 @@ class Yuv2Nv21Adapter : Yuv420888Image {
 
     }
     fun toNv21(): ByteArray? {
-        var nv21 = ByteArray((width * height * 1.5).toInt())
+        val nv21 = ByteArray((width * height * 1.5).toInt())
         if(!yuv2Nv21(width, height, y, u, v, yRowStride, uvRowStride, yPixelStride, uvPixelStride, nv21)) {
             Log.i("Yuv2Nv21", "nv21 is null")
             return null
