@@ -1,3 +1,6 @@
+import 'dart:typed_data';
+
+import 'package:bitmap_adapter/dto/yuv_image.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import 'bitmap_adapter_method_channel.dart';
@@ -25,5 +28,11 @@ abstract class BitmapAdapterPlatform extends PlatformInterface {
 
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
+  }
+
+  Future<Uint8List> convertToBitmap(YuvImage image) {
+    throw UnimplementedError(
+      'convertToBitmap(YuvImage image) has not been implemented.',
+    );
   }
 }

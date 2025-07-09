@@ -1,3 +1,4 @@
+import 'package:bitmap_adapter/dto/yuv_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -11,7 +12,14 @@ class MethodChannelBitmapAdapter extends BitmapAdapterPlatform {
 
   @override
   Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
+    final version = await methodChannel.invokeMethod<String>(
+      'getPlatformVersion',
+    );
     return version;
+  }
+
+  @override
+  Future<Uint8List> convertToBitmap(YuvImage image) async {
+    return Uint8List(100);
   }
 }
